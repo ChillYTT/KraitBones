@@ -4,35 +4,119 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="/images/favicon.ico">
     <main>
-        <div class="navbar">
-            <a href="https://discord.gg/sNw4BzjRap">Community</a>
-            <a href="/settings.html">Settings</a>
-            <a href="/gfiles-main/index.html">games</a>
-            <a href="/credits.html">credits</a>
+        <div style="margin-right: 15px; margin-top: 15px;" class="navbar">
+            <a style="margin-left: 15px;" href="/gfiles-main/index.html">Games</a>
+            <a style="margin-left: 15px;" href="/gfiles-main/index.html">Dev Logs</a>
+            <a style="margin-left: 15px;" href="/gfiles-main/index.html">Events</a>
+            <a style="margin-left: 15px;" href="https://discord.gg/sNw4BzjRap">Community</a>
+            <a style="margin-left: 15px;" href="/settings.html">Settings</a>
         </div>
 <html>
-    <title>THE - SIMPLE - UNBLOCKER</title>
+    <title>Krait.IO</title>
     <head>
         <style>
             body {
                 text-align: center;
                 font-family: 'Roboto', sans-serif;
                 font-size: 200%;
-                color: gray;
+                color: rgb(224, 224, 224);
             }
         </style>
     </head>
     <body>
-        <br><br><br><br>
-        <h4>THE - SIMPLE - UNBLOCKER</h4>
-        <form action="/main/gateway/" method="POST">
-            <input name="url" placeholder="Search the web">
-            <input type="submit" value="Go">
-        </form>
-        <h6>Backend Proxy - Corrosion</h6>
-        <h6>known issues: any .google.com domain does not work atm</h6>
-        <h6>add my discord or dm 696969#6969</h6>
+    <div id="container">
+        <div id="featured" class="hcg-slider">
+            <div class="hcg-slide-container">
+                <div class="hcg-slider-body">
+                    <a class="hcg-slides animated" style="display:block">
+                        <span class="hcg-slide-number">1/5</span>
+                        <img src="https://www.html-code-generator.com/images/slider/1.png" alt="image 1">
+                        <span class="hcg-slide-text">image 1</span>
+                    </a>
+                </div>
+                <a class="hcg-slide-prev" href="#">❮</a>
+                <a class="hcg-slide-next" href="#">❯</a>
+            </div>
+            <div class="hcg-slide-dot-control"></div>
+            </div>  
+    </div>
+              
     </body>
 </html>
-<br>
-<div class="footer">THE - SIMPLE - UNBLOCKER <a class="link" href="/terms-privacy.html">Terms &amp; Privacy</a> </div>
+<br><br><br>
+<div style="text-align: left; font-size: 10px;" class="footer">Krait.IO <a class="link" href="/terms-privacy.html">Terms &amp; Privacy</a> (This new design was made by Daza) </div>
+<script>
+    (function(){
+    //If you want to include more images, add the link name and URL of the image in the array list below.
+        let images_list = [
+            {"url":"https://www.html-code-generator.com/images/slider/1.png","name":"image 1","link":""},
+            {"url":"https://www.html-code-generator.com/images/slider/2.png","name":"image 2","link":""},
+            {"url":"https://www.html-code-generator.com/images/slider/3.png","name":"image 3","link":""},
+            {"url":"https://www.html-code-generator.com/images/slider/4.png","name":"image 4","link":""},
+            {"url":"https://www.html-code-generator.com/images/slider/5.png","name":"image 5","link":""}
+        ];
+    
+        let slider_id = document.querySelector("#featured");
+    
+        // append all images
+        let dots_div = "";
+        let images_div = "";
+        for (let i = 0; i < images_list.length; i++) {
+            // if no link without href="" tag
+            let href = (images_list[i].link == "" ? "":' href="'+images_list[i].link+'"');
+            images_div += '<a'+href+' class="hcg-slides animated"'+(i === 0 ? ' style="display:block"':'')+'>'+
+                            '<span class="hcg-slide-number">'+(i+1)+'/'+images_list.length+'</span>'+
+                            '<img src="'+images_list[i].url+'" alt="'+images_list[i].name+'">'+
+                            '<span class="hcg-slide-text">'+images_list[i].name+'</span>'+
+                         '</a>';
+            dots_div += '<span class="hcg-slide-dot'+(i === 0 ? ' dot-active':'')+'" data-id="'+i+'"></span>';
+        }
+        slider_id.querySelector(".hcg-slider-body").innerHTML = images_div;
+        slider_id.querySelector(".hcg-slide-dot-control").innerHTML = dots_div;
+    
+        let slide_index = 0;
+    
+        let images = slider_id.querySelectorAll(".hcg-slides");
+        let dots = slider_id.querySelectorAll(".hcg-slide-dot");
+        let prev_button = slider_id.querySelector(".hcg-slide-prev");
+        let next_button = slider_id.querySelector(".hcg-slide-next");
+    
+        function showSlides() {
+            if (slide_index > images.length-1) {
+                slide_index = 0;
+            }
+            if (slide_index < 0) {
+                slide_index = images.length-1;
+            }
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = "none";
+                dots[i].classList.remove("dot-active");
+                if (i == slide_index) {
+                    images[i].style.display = "block";
+                    dots[i].classList.add("dot-active");
+                }
+            }
+        }
+    
+        prev_button.addEventListener("click", function(event) {
+            event.preventDefault();
+            slide_index--;
+            showSlides();
+        }, false);
+    
+        next_button.addEventListener("click", function(event){
+            event.preventDefault();
+            slide_index++;
+            showSlides();
+        }, false);
+    
+        function dot_click(event) {
+            slide_index = event.target.dataset.id;
+            showSlides();
+        }
+    
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].addEventListener("click", dot_click, false);
+        }
+    })();
+    </script>
