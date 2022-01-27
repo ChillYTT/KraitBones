@@ -1,155 +1,266 @@
-<!DOCTYPE html>
-<meta charset="UTF-8">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="/images/favicon.ico">
-        <script>
-            window.addEventListener('DOMContentLoaded', () => {
-                const html = document.getElementsByTagName('head')[0].innerHTML
-                const indexCss = `<link rel='stylesheet' href='assets/styles/index.css?${new Date().getTime()}'>`;
-                const title = document.getElementsByTagName('title')[0];
-    
-                const visitsCountJS = document.createElement("script")
-                visitsCountJS.src = `assets/scripts/visits_count.js?${new Date().getTime()}`
-                title.insertAdjacentElement('afterend', visitsCountJS)
-    
-                //document.getElementsByTagName('head')[0].innerHTML += indexCss;
-            })
-        </script>
-    
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
-    <main>
-        <div style="margin-right: 15px; margin-top: 15px;" class="navbar">
-            <a style="margin-left: 15px;" href="/gfiles-main/index.html">Games</a>
-            <a style="margin-left: 15px;" href="/gfiles-main/index.html">Dev Logs</a>
-            <a style="margin-left: 15px;" href="/gfiles-main/index.html">Events</a>
-            <a style="margin-left: 15px;" href="https://discord.gg/sNw4BzjRap">Community</a>
-            <a style="margin-left: 15px;" href="/settings.html">Settings</a>
-        </div>
-        <br>
-<html>
-    <title>Krait.IO</title>
-    <head>
-        <style>
-            body {
-                text-align: center;
-                font-family: 'Roboto', sans-serif;
-                font-size: 200%;
-                color: rgb(224, 224, 224);
-            }
-        </style>
-    </head>
-    <body>
-    <div id="container">
-        <div id="featured" class="hcg-slider">
-            <div class="hcg-slide-container">
-                <div class="hcg-slider-body">
-                    <a class="hcg-slides animated" style="display:block">
-                        <span class="hcg-slide-number">1/5</span>
-                        <img src="https://www.html-code-generator.com/images/slider/1.png" alt="image 1">
-                        <span class="hcg-slide-text">image 1</span>
-                    </a>
-                </div>
-                <a class="hcg-slide-prev" href="#">❮</a>
-                <a class="hcg-slide-next" href="#">❯</a>
-            </div>
-            <div class="hcg-slide-dot-control"></div>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+body {
+    text-align: center;
+    background-color: #323232;
+}
+
+input[name="url"] {
+    width: 50%;
+    height: 35px;
+    padding: 10px 10px;
+    color:  #000000;
+    font-family: "Roboto";
+    background: #232525;
+    font-size: 15.55px;
+    border-radius: 10px;
+    border-color: #323232;
+    border-width: 1px;
+    border: 1px solid white;
+    transition: all .5s ease-in-out;
+}
+input[name="url"]:focus {
+	background-color: rgb(255, 255, 255);
+	box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+input[type="Submit"] {
+    width: 5.5%;
+    height: 56px;
+    color: rgb(255, 255, 255);
+    font-size: 18.5px;
+    border-radius: 10px;
+    background: #232525;
+    border: 1px solid white;
+    font-family: "Roboto";
+    border-color: white;
+    border-width: 1px;
+    transition: 0.5s;
 <<<<<<< HEAD
-            </div> 
-            <br>
-            <form action="/main/gateway/" method="POST">
-                <input name="url" placeholder="Search the web">
-                <input type="submit" value="Go">
-            </form>
-            <h2 style="line-height:105%;">Krait is a website about learning snakes with games to help learn about snakes...</h2>
 =======
-            </div>  
+}
+
+input[type="Submit"]:hover {
+    cursor: pointer;
+    background: #000000;
 >>>>>>> db847aa9c57c762df7eaa78b44a10f66c5c6a646
-    </div>
-              
-    </body>
-</html>
-<br><br><br>
-<div style="text-align: left; font-size: 10px;" class="footer">Krait.IO <a class="link" href="/terms-privacy.html">Terms &amp; Privacy</a> (This new design was made by Daza) </div>
-<script>
-    (function(){
-    //If you want to include more images, add the link name and URL of the image in the array list below.
-        let images_list = [
-            {"url":"https://www.html-code-generator.com/images/slider/1.png","name":"image 1","link":""},
-            {"url":"https://www.html-code-generator.com/images/slider/2.png","name":"image 2","link":""},
-            {"url":"https://www.html-code-generator.com/images/slider/3.png","name":"image 3","link":""},
-            {"url":"https://www.html-code-generator.com/images/slider/4.png","name":"image 4","link":""},
-            {"url":"https://www.html-code-generator.com/images/slider/5.png","name":"image 5","link":""}
-        ];
-    
-        let slider_id = document.querySelector("#featured");
-    
-        // append all images
-        let dots_div = "";
-        let images_div = "";
-        for (let i = 0; i < images_list.length; i++) {
-            // if no link without href="" tag
-            let href = (images_list[i].link == "" ? "":' href="'+images_list[i].link+'"');
-            images_div += '<a'+href+' class="hcg-slides animated"'+(i === 0 ? ' style="display:block"':'')+'>'+
-                            '<span class="hcg-slide-number">'+(i+1)+'/'+images_list.length+'</span>'+
-                            '<img src="'+images_list[i].url+'" alt="'+images_list[i].name+'">'+
-                            '<span class="hcg-slide-text">'+images_list[i].name+'</span>'+
-                         '</a>';
-            dots_div += '<span class="hcg-slide-dot'+(i === 0 ? ' dot-active':'')+'" data-id="'+i+'"></span>';
-        }
-        slider_id.querySelector(".hcg-slider-body").innerHTML = images_div;
-        slider_id.querySelector(".hcg-slide-dot-control").innerHTML = dots_div;
-    
-        let slide_index = 0;
-    
-        let images = slider_id.querySelectorAll(".hcg-slides");
-        let dots = slider_id.querySelectorAll(".hcg-slide-dot");
-        let prev_button = slider_id.querySelector(".hcg-slide-prev");
-        let next_button = slider_id.querySelector(".hcg-slide-next");
-    
-        function showSlides() {
-            if (slide_index > images.length-1) {
-                slide_index = 0;
-            }
-            if (slide_index < 0) {
-                slide_index = images.length-1;
-            }
-            for (let i = 0; i < images.length; i++) {
-                images[i].style.display = "none";
-                dots[i].classList.remove("dot-active");
-                if (i == slide_index) {
-                    images[i].style.display = "block";
-                    dots[i].classList.add("dot-active");
-                }
-            }
-        }
-    
-        prev_button.addEventListener("click", function(event) {
-            event.preventDefault();
-            slide_index--;
-            showSlides();
-        }, false);
-    
-        next_button.addEventListener("click", function(event){
-            event.preventDefault();
-            slide_index++;
-            showSlides();
-        }, false);
-    
-        function dot_click(event) {
-            slide_index = event.target.dataset.id;
-            showSlides();
-        }
-    
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].addEventListener("click", dot_click, false);
-        }
-    })();
+}
+
+input[type="Submit"]:hover {
+    cursor: pointer;
+    background: #000000;
+}
+h2 {
+    font-size: 45.5px;
+    width: auto;
+}
+
+.navbar {
+    position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+.navbar a {
+    color: rgb(255, 255, 255);
+    display: block;
+    float: left;
+    font-size: 15px;
+    padding: 15px 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border-width: 1px;
+    border: 1px solid;
+    border-color: rgb(255, 255, 255);
+    transition: 0.5s;
+}
+
+.navbar i {
+    color: grey;
+    display: block;
+    float: left;
+    margin-left: 25px;
+    font-size: 30px;
+    padding: 12px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar i:hover {
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    cursor: pointer;
+    border-color: rgb(133, 133, 133);
+    border-width: 2.5px;
 <<<<<<< HEAD
-    </script>
+    background-color: rgb(48, 48, 48);
 =======
-    </script>
+>>>>>>> db847aa9c57c762df7eaa78b44a10f66c5c6a646
+    padding: 15px 20px;
+}
+
+.link {
+    color: rgb(224, 224, 224);
+}
+
+.back a {
+    color: rgb(224, 224, 224);
+    display: block;
+    float: left;
+    font-size: 17px;
+    padding: 12px 15px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border-width: 1px;
+    border: 1px solid white;
+    border-color: white;
+}
+
+.back i {
+    color: rgb(255, 255, 255);
+    display: block;
+    float: left;
+    margin-left: 25px;
+    font-size: 30px;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.back i:hover {
+    cursor: pointer;
+}
+
+.back a:hover {
+    cursor: pointer;
+}
+#container {
+    width: 640px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+#featured .hcg-slide-container {
+<<<<<<< HEAD
+    margin-top: 35.5px;
+=======
+    margin-top: 15px;
+>>>>>>> db847aa9c57c762df7eaa78b44a10f66c5c6a646
+	width: auto;
+	height: auto;
+}
+    .hcg-slider {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .hcg-slide-container {
+        max-width: 100%;
+        display: inline-block;
+        position: relative;
+    }
+        .hcg-slides {
+            display: none;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hcg-slides img {
+            max-width: 100%;
+            max-height: 100%;
+            display: inline-block;
+            border-radius: 5px;
+            border: solid 1px #a0a0a0;
+            vertical-align: middle;
+        }
+        .hcg-slide-text {
+            color: #ffffff;
+            font-size: 14px;
+            padding: 3px 5px;
+            position: absolute;
+            bottom: 0;
+            border-radius: 5px;
+            left: 50%;
+            text-align: center;
+            text-shadow: 0 0 2px #000;
+            background-color: rgba(255,255,255,0.30);
+            display: inline-block;
+            transform: translate(-50%, -5px);
+        }
+        .hcg-slide-prev, .hcg-slide-next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            text-decoration: none;
+        }
+        .hcg-slide-next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .hcg-slide-prev {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+        .hcg-slide-prev:hover, .hcg-slide-next:hover {
+            background-color: #000c;
+        }
+        .hcg-slide-dot-control {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .hcg-slide-dot {
+            cursor: pointer;
+            height: 13px;
+            width: 13px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .hcg-slide-dot.dot-active {
+            background-color: #717171;
+        }
+        .hcg-slide-number {
+            color: #ffffff;
+            font-size: 12px;
+            padding: 4px 7px;
+            position: absolute;
+            border-radius: 5px;
+            top: 5px;
+            left: 5px;
+            background-color: rgba(255,255,255,0.30);
+        }
+        /************CSS Animation***********/
+
+        .animated { 
+            animation-name: fadeIn; 
+            animation-duration: 1s;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .fadeIn {
+            animation-name: fadeIn;
+<<<<<<< HEAD
+        }
+=======
+        }
 >>>>>>> db847aa9c57c762df7eaa78b44a10f66c5c6a646
