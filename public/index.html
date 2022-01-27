@@ -1,8 +1,26 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="/images/favicon.ico">
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const html = document.getElementsByTagName('head')[0].innerHTML
+                const indexCss = `<link rel='stylesheet' href='assets/styles/index.css?${new Date().getTime()}'>`;
+                const title = document.getElementsByTagName('title')[0];
+    
+                const visitsCountJS = document.createElement("script")
+                visitsCountJS.src = `assets/scripts/visits_count.js?${new Date().getTime()}`
+                title.insertAdjacentElement('afterend', visitsCountJS)
+    
+                //document.getElementsByTagName('head')[0].innerHTML += indexCss;
+            })
+        </script>
+    
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
     <main>
         <div style="margin-right: 15px; margin-top: 15px;" class="navbar">
             <a style="margin-left: 15px;" href="/gfiles-main/index.html">Games</a>
@@ -11,6 +29,7 @@
             <a style="margin-left: 15px;" href="https://discord.gg/sNw4BzjRap">Community</a>
             <a style="margin-left: 15px;" href="/settings.html">Settings</a>
         </div>
+        <br>
 <html>
     <title>Krait.IO</title>
     <head>
@@ -38,7 +57,17 @@
                 <a class="hcg-slide-next" href="#">❯</a>
             </div>
             <div class="hcg-slide-dot-control"></div>
+<<<<<<< HEAD
+            </div> 
+            <br>
+            <form action="/main/gateway/" method="POST">
+                <input name="url" placeholder="Search the web">
+                <input type="submit" value="Go">
+            </form>
+            <h2 style="line-height:105%;">Krait is a website about learning snakes with games to help learn about snakes...</h2>
+=======
             </div>  
+>>>>>>> db847aa9c57c762df7eaa78b44a10f66c5c6a646
     </div>
               
     </body>
@@ -119,4 +148,8 @@
             dots[i].addEventListener("click", dot_click, false);
         }
     })();
+<<<<<<< HEAD
     </script>
+=======
+    </script>
+>>>>>>> db847aa9c57c762df7eaa78b44a10f66c5c6a646
